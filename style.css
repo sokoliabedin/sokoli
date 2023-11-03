@@ -5,6 +5,7 @@ body{
     text-decoration: none;
     outline: none;
     font-family:"Poppins",sans-serif ;
+    
 }
 html{
     font-size:62.5% ;
@@ -138,9 +139,10 @@ letter-spacing: 0.2;
     width: 12rem;
     height: 5.5rem;
     cursor: pointer;
-    margin: .1rem;
+    margin: 0.1rem;
     font-size: 1.4rem;
-    transition: all 0.3sec;
+    transition:all 0.3 ;
+
 }
 
 .banner-btn-1{
@@ -164,8 +166,9 @@ letter-spacing: 0.2;
 }
 
 .banner-btn-2:hover {
-    background-color: transparent;
+    background-color: #c49b63;
     color: #222;
+    border: 0.1rem, solid #c49b63;
 
 }
 
@@ -174,12 +177,14 @@ letter-spacing: 0.2;
     height: 85%;
 }
 
-.swiper-slide img{
+
+.swiper-slide img {
+    display: block;
     width: 100%;
     height: 100%;
     object-fit: cover;
 }
-
+/* dej qetu roni ska gabime te terhjes sentimentale kontrifuniciobale/
 /* KUR JA NIS ME JS OSHT QITU, NESE TVYN IDK */
 
 span.swiper-pagination-bullet {
@@ -192,7 +197,7 @@ span.swiper-pagination-bullet {
 }
 
 span.sipwer-pagination::after {
-    content: ;
+    content:"" ;
     width: 2.5rem;
     height: 2.5rem;
     border-radius: 50%;
@@ -204,13 +209,11 @@ span.sipwer-pagination::after {
     border: .2rem solid #aaa;
 }
 
-span.swiper-pagination-bullet.
-swiper-pagination-bullet-active {
+span.swiper-pagination-bullet .swiper-pagination-bullet-active {
 background-color: #fff;
 }
 
-span.swiper-pagination-bullet.
-swiper-pagination-bullet-active::after { 
+span.swiper-pagination-bullet .swiper-pagination-bullet-active::after { 
 border: .2rem solid #fff;
 }
 
@@ -303,7 +306,7 @@ border: .2rem solid #fff;
 .menu {
     width: 100%;
     height: 70wh;
-    background: linear-gradient(rgba(0,0,0,.) ,
+    background: linear-gradient(rgba(0,0,0,) ,
     rgba(0,0,0,8.)), url(images/image8.jpg)center no-repeat;
     background-size: cover;
     display: flex;
@@ -342,8 +345,8 @@ border: .2rem solid #fff;
     height: 5.5rem;
     background-color: transparent;
     border: .1rem solid #c49b63;
-    color: #c4c4c4
-    /* font-size ma qitka error qitu */ : 1.3rem;
+    color: #c4c4c4;
+   font-size: 1.3rem;
     text-transform: uppercase;
     cursor: pointer;
 }
@@ -372,12 +375,12 @@ border: .2rem solid #fff;
     overflow: hidden;
 }
 
-.menu-img-wrapper: img {
+.menu-img-wrapper img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     cursor: pointer;
-    transformer: transform 0.6sec;
+    transform: transform 0.6sec;
 }
 
 .menu-img-wrapper:hover img {
@@ -509,7 +512,7 @@ border: .2rem solid #fff;
     height: 21rem; 
 }
 
-.client: :nth-child(even) {
+.client:nth-child(even) {
     opacity: 0,9;
 }
 
@@ -601,7 +604,7 @@ color: #fff;
 }
 
 .contact-btn {
-    weight: 30rem;
+    width: 30rem;
     height: 6rem;
     background-color: #c49b63;
     color: #2a2727;
@@ -681,7 +684,7 @@ footer {
     }
 }
 
-@media (max-width:900 px) {
+@media (max-width:900px) {
      .landing-contact div span:nth-child(2) {
       display: none;
    } 
@@ -701,7 +704,7 @@ footer {
    }
 
    .customers {
-    heigh: 140hv;
+    height: 140hv;
    }
 
    .customer h1 {
