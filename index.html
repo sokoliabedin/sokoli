@@ -3,7 +3,8 @@
     <head>
         <meta charset="UTF-8">
         <meta https-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width , initial-scale=1.0">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
         <title> Coffee House </title>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
         <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -115,54 +116,71 @@
              </div>
         </section>
 
-        <section class="menu">
-            <div class="menu-left">
-                <h3 class="main-heading"> Discover</h3>
-                <h1>Our Menu</h1>
-                <p>ndulge in our meticulously crafted signature blends,
-                     each one a harmonious fusion of premium beans sourced from the world's coffee-growing regions. 
-                     From the velvety notes of our Espresso Supreme to the enchanting aroma of our Single-Origin Perfection,
-                      each blend is a masterpiece in its own right.
-                     </p>
-                     <button type="button" class="menu-btn">
-                        View Full Menu
-                     </button>
-
+       <section class="menu">
+    <div class="menu-left">
+        <h3 class="main-heading">Discover</h3>
+        <h1>Our Menu</h1>
+        <p>Experience the artistry of coffee-making with our artisanal brews.
+             From pour-over perfection to French press finesse, 
+             our skilled baristas transform each cup into a work of art. 
+             Discover the nuances of flavor,
+             aroma, and body in every sip.</p>
+        <button type="button" class="menu-btn">view Full Menu</button>
+    </div>
+    <div class="menu-right">
+        <div class="menu-right-images">
+            <div class="menu-img-wrapper">
+               <img src="images/image4.jpg" > 
             </div>
-            <div class="menu-right">
-                <div class="menu-right-images">
-                   <div class="menu-img-wrappers">
-                    <img src="images/image4.jpg" >
-                   </div> 
-                   <div class="menu-img-wrappers">
-                    <img src="images/image5.jpg" >
-                   </div> 
-                   <div class="menu-img-wrappers">
-                    <img src="images/image6.jpg" >
-                   </div> 
-                   <div class="menu-img-wrappers">
-                    <img src="images/image7.jpg" >
-                   </div> 
-                </div>
+            <div class="menu-img-wrapper">
+                <img src="images/image5.jpg" > 
+             </div>
+             <div class="menu-img-wrapper">
+                <img src="images/image6.jpg" > 
+             </div>
+             <div class="menu-img-wrapper">
+                <img src="images/image7.jpg" > 
+             </div>
+        </div>
+    </div>
+       </section>
+       <section class="data">
+        <div>
+            <div class="icon-wrapper">
+                <i class="fa-solid fa-mug-hot"></i>
+                <span class="icon-bg"></span>
             </div>
+            <span class="num" data-val="350">
+                0
+            </span>
+            <span class="info">Coffee Branches</span>
+        </div>
+        <div>
+            <div class="icon-wrapper">
+                <i class="fa-solid fa-mug-hot"></i>
+                <span class="icon-bg"></span>
+            </div>
+            <span class="num" data-val="90">
+                0
+            </span>
+            <span class="info">Number of Awards</span>
+        </div>
+        <div>
+            <div class="icon-wrapper">
+                <i class="fa-solid fa-mug-hot"></i>
+                <span class="icon-bg"></span>
+            </div>
+            <span class="num" data-val="2540">
+                0
+            </span>
+            <span class="info">Happy Customers</span>
+        </div>
+       </section>
 
-        </section>
 
-
+</div>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
-    <script>var swiper = new Swiper(".mySwiper", {
-        autoplay:{
-          delay:4000,
-          disableOnInteraction:false,
-        },
-        effect:"fade",
-        loop:true,
-        
-        pagination: {
-          el: ".swiper-pagination",
-          clickable:true,
-        },
-      }); </script> 
+  <script defer src="script.js"></script>
     </body>
 </html>

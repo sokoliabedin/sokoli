@@ -1,4 +1,4 @@
-/*36:39*/
+/*1:02*/
 @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
 body{
     margin:0;
@@ -31,6 +31,7 @@ html{
     align-items: center;
     border-bottom: .1rem solid rgba(255,255,255,0.1);
     transform: all 0.5s;
+    z-index: 300;
 }
 
 .sticky.navbar {
@@ -310,7 +311,7 @@ border: .2rem solid #fff;
 .menu {
     width: 100%;
     height: 70wh;
-    background: linear-gradient(rgba(0,0,0,) ,
+    background: linear-gradient(rgba(0,0,0,0.9) ,
     rgba(0,0,0,0.8)), url(images/image8.jpg)center no-repeat;
     background-size: cover;
     display: flex;
@@ -319,7 +320,7 @@ border: .2rem solid #fff;
 
 .menu-left {
     width: 50%;
-    text-align: center;
+    text-align: right;
     margin-right: 3rem;
 }
 
@@ -337,7 +338,7 @@ border: .2rem solid #fff;
 
 .menu-left p {
     font-size: 1.4rem;
-    color: #fff;
+    color: #777;
     width: 50rem;
     margin: 2rem 0 4rem auto;
     line-height: 1.2;
@@ -345,10 +346,10 @@ border: .2rem solid #fff;
 }
 
 .menu-btn {
-    width: 1.5rem;
+    width: 15rem;
     height: 5.5rem;
     background-color: transparent;
-    border: .1rem solid #c49b63;
+    border: 0.1rem solid #c49b63;
     color: #c4c4c4;
    font-size: 1.3rem;
     text-transform: uppercase;
@@ -384,17 +385,17 @@ border: .2rem solid #fff;
     height: 100%;
     object-fit: cover;
     cursor: pointer;
-    transform: transform 0.6sec;
+    transition:transform 0.6s;
 }
 
 .menu-img-wrapper:hover img {
     transform: scale(1.3);
 }
-
-.data {
+/*Data*/
+.data{
     width: 100%;
     height: 50vh;
-    background: linear-gradient(rgba(0,0,0,.4),rgba(0,0,0,.3))
+    background: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.3)),
     url(images/image7.jpg) center no-repeat;
     background-size: cover;
     display: flex;
@@ -415,13 +416,15 @@ border: .2rem solid #fff;
     width: 8rem;
     height: 8rem;
     cursor: pointer;
+    position: relative;
 }
 
 .icon-bg {
     display: block;
     width: 100%;
     height: 100%;
-    border: 0.1rem solid #c4c4c4;
+    border: 0.1rem solid #c49b63;
+    transition: all 0.3s;
 }
 
 .data i {
@@ -430,13 +433,14 @@ border: .2rem solid #fff;
     left: 50%;
     transform:translate(-50% ,-50%);
     font-size: 3rem;
-    -webkit-text-stroke: .2rem #c49b63;
+    -webkit-text-stroke: 0.2rem #c49b63;
     color: transparent;
     z-index: 100;
+    transition: all 0.3s;
 }
 
 .icon-wrapper:hover .icon-bg {
-    background-color: #c4c4c4;
+    background-color: #c49b63;
     transform: rotateZ(135deg);    
 }
 
