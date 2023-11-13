@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 
-<!-- TO DO LIST : img src photos and anything else you havent added , because you had no correct photos -->
+<!-- TO DO LIST : 1.img src photos and anything else you havent added , because you had no correct photos 
+2. Span edhe parametrat e qito se i kom bo do komente veq per jokes.  
+-->
 
 <html lang="en">
   <head>
@@ -9,12 +11,13 @@
     <meta name = "viewport" content="width=device-width, initial-scale=1.0">
     <title> Coffee Shop </title>
 
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
   </head>
   <body>
     <header class="header">
       <a href="#" class="logo">
-        <img src="images/logo.png" /> 
+        <img src="images/logo.png" alt=""> 
       </a>
 
       <nav class="navbar">
@@ -28,36 +31,37 @@
       </nav>
 
       <div class="icons">
-        <div class="fas fa-search" id="search-btn"></div>
-        <div class="fas fa-shopping-cart" id="cart-btn"></div>
-        <div class="fas fa-bart" id="menu-btn"></div>
-      </div>
+        <div class="fas fa-search" id="search-btn"> </div>
+        <div class="fas fa-shopping-cart" id="cart-btn"> </div>
+        <div class="fas fa-bars" id="menu-btn"> </div> <!-- 5.42 nuk e di qysh mja bo , osht per font -->
+      </div>                                           <!-- edhe foto me shtu I guess syntax e kom kqyr -->
 
       <div class="search-form">
-        <input type="search" id="search-box" placeholder="search here..." />
+        <input type="search" id="search-box" placeholder="search here..." >
         <label for="search-box" class="fas fa-search"> </label>
-      </div>
+      </div> 
 
       <div class="cart-items-container">
-        <div class="cart-items">
+
+        <div class="cart-item">
           <span class="fas fa-times"> </span>
-          <img src="images/cart-itme-1.png" />
+          <img src="images/cart-item-1.png" alt="">
           <div class="content">
             <h3>cart item 01</h3>
             <div class="price">$6.99</div>
           </div>
         </div>
 
-        <div class="cart-items">
+        <div class="cart-item">
           <span class="fas fa-times"> </span>
-          <img src="" />
+          <img src="" alt="">
           <div class="content">
             <h3>cart item 02</h3>
             <div class="price">$5.00</div>
           </div>
         </div>
 
-        <div class="cart-items">
+        <div class="cart-item">
           <span class="fas fa-times"> </span>
           <img src="" />
           <div class="content">
@@ -66,7 +70,7 @@
           </div>
         </div>
 
-        <div class="cart-items">
+        <div class="cart-item">
           <span class="fas fa-times"> </span>
           <img src="" />
           <div class="content">
@@ -79,13 +83,13 @@
     </header>
 
     <section class="home" id="home">
-      <div class="">
-        <h3>Fresh coffee in the morning</h3>
+      <div class="content">
+        <h3>Fresh coffee in the morning , rritna bugjetin t* q*fsha krejt </h3>
         <p>
           Lorem, ipsum dolor sit amet consectetur adipisicing elit. Impedit at
           autem, natus voluptatibus harum provident.
         </p>
-        <a href="#" class="btn"> GET YOURS NOW</a>
+        <a href="#" class="btn">Get Yours Now</a>
       </div>
     </section>
 
@@ -93,14 +97,15 @@
       <h1 class="heading"><span>about</span> us</h1>
 
       <div class="row">
+
         <div class="image">
-          <img src="images/Image1.jpg" />
+          <img src="images/image1.jpg" > <!-- IMAGE CHANGE -->
         </div>
 
         <div class="content">
           <h3>
-            what makes our coffee special : HINT : NOTHING FUCKING SHIT , JUST
-            BUY OUR COFFEE
+            what makes our coffee special? HINT : NOTHING FUCKING SHIT , JUST
+            BUY OUR COFFEE YOU DOGSHIT HUMAN , just spend your money on our scam :3333333333333333333
           </h3>
           <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure minus
@@ -108,9 +113,9 @@
             incidunt eveniet doloremque, laborum voluptatem dolor iusto placeat
             reprehenderit nobis quae officia.
           </p>
-          <a href="#" class="btn"> learn more </a>
-          </div>
-        </div>
+          <p> Lorem bitch </p>
+          <a href="#" class="btn"> learn more </a> 
+        </div> <!-- Removed one unnesecary closing div -->
       </div>
     </section>
 
@@ -121,42 +126,42 @@
       <div class="box-container"> 
         
         <div class="box"> 
-          <img src="">
+          <img src="" alt="">
+          <h3> QUALITY COFFEE </h3>
+          <div class="price"> $15.99  <span> $20.99</span> </div>
+          <a href="#" class="btn"> add to cart </a>
+        </div>
+
+        <div class="box"> 
+          <img src="" alt="">
+          <h3> QUALITY COFFEE </h3>
+          <div class="price"> $15.99  <span> $20.99</span> </div>
+          <a href="#" class="btn"> add to cart </a>
+        </div>
+
+        <div class="box"> 
+          <img src="" alt="">
+          <h3> QUALITY COFFEE </h3>
+          <div class="price"> $15.99  <span> $20.99</span> </div>
+          <a href="#" class="btn"> add to cart </a>
+        </div>
+
+        <div class="box"> 
+          <img src="" alt="">
+          <h3> QUALITY COFFEE </h3>
+          <div class="price"> $15.99  <span> $20.99</span> </div>
+          <a href="#" class="btn"> add to cart </a>
+        </div>
+
+        <div class="box"> 
+          <img src="" alt="">
           <h3> QUALITY COFFEE </h3>
           <div class="price"> $15.99  <span> 20.99</span> </div>
           <a href="#" class="btn"> add to cart </a>
         </div>
 
         <div class="box"> 
-          <img src="">
-          <h3> QUALITY COFFEE </h3>
-          <div class="price"> $15.99  <span> 20.99</span> </div>
-          <a href="#" class="btn"> add to cart </a>
-        </div>
-
-        <div class="box"> 
-          <img src="">
-          <h3> QUALITY COFFEE </h3>
-          <div class="price"> $15.99  <span> 20.99</span> </div>
-          <a href="#" class="btn"> add to cart </a>
-        </div>
-
-        <div class="box"> 
-          <img src="">
-          <h3> QUALITY COFFEE </h3>
-          <div class="price"> $15.99  <span> 20.99</span> </div>
-          <a href="#" class="btn"> add to cart </a>
-        </div>
-
-        <div class="box"> 
-          <img src="">
-          <h3> QUALITY COFFEE </h3>
-          <div class="price"> $15.99  <span> 20.99</span> </div>
-          <a href="#" class="btn"> add to cart </a>
-        </div>
-
-        <div class="box"> 
-          <img src="">
+          <img src="" alt="">
           <h3> QUALITY COFFEE </h3>
           <div class="price"> $15.99  <span> 20.99</span> </div>
           <a href="#" class="btn"> add to cart </a>
@@ -165,7 +170,7 @@
       </div>
 
     </section>
-
+ 
     <section class="products" id="products">
       <h1 class="heading">our <span> products</span></h1>
 
@@ -176,11 +181,13 @@
             <a href="#" class="fas fa-heart"> </a>
             <a href="#" class="fas fa-eye"> </a>
            </div>
+
            <div class="image">  
-            <img src="">
+            <img src="" alt=""> <!-- ADD IMAGE --> 
            </div>
+
            <div class="content"> 
-              <h3> fresh coffee </h3>
+              <h3> fresh coffee ropt ti q*fsha ty duhet cold me ta jep </h3>
               <div class="stars"> 
                 <i class="fas fa-star"> </i>
                 <i class="fas fa-star"> </i>
@@ -198,9 +205,11 @@
            <a href="#" class="fas fa-heart"> </a>
            <a href="#" class="fas fa-eye"> </a>
           </div>
+
           <div class="image"> 
            <img src="">
           </div>
+
           <div class="content"> 
              <h3> fresh coffee </h3>
              <div class="stars"> 
@@ -214,18 +223,26 @@
           </div>
        </div>
 
+        <div class="box">
+          <div class="icons"> 
+            <a href="#" class="fas fa-shopping-cart"> </a>
+            <a href="#" class="fas fa-heart"> </a>
+            <a href="#" class="fas fa-eye"> </a>          
+          </div>
+        </div>
+
       </div>
     </section>
 
-    <section class="review" id="review"> 
+    <section class="review" id="review">
+
       <h1 class="heading"> Customer's <span> reviews </span></h1>
       <div class="box-container">
+
         <div class="box">
-           <img src=""> 
-           <p> Lorem ipsum, dolor sit amet consectetur adipisicing elit. In natus, sapiente esse recusandae,
-             saepe voluptatum aliquam id dolorem distinctio vero illum quod quae obcaecati 
-             ullam doloremque cum reprehenderit magnam porro!</p>     
-             <img src="images/person3.jpg" class="user">
+           <img src="" alt="" class="quote"> 
+           <p> Nese tvyn quote mu kan convinced , you are weak minded </p>     
+             <img src="" class="user"> <!-- ADD PHOTOS -->
              <h3> John </h3> 
              <div class="stars"> 
               <i class="fas fa-star"> </i>
@@ -237,7 +254,7 @@
           </div>
 
           <div class="box">
-            <img src=""> 
+            <img src="" alt=""> 
             <p> Lorem ipsum, dolor sit amet consectetur adipisicing elit. In natus, sapiente esse recusandae,
               saepe voluptatum aliquam id dolorem distinctio vero illum quod quae obcaecati 
               ullam doloremque cum reprehenderit magnam porro!</p>     
@@ -253,7 +270,7 @@
            </div>
 
            <div class="box">
-            <img src=""> 
+            <img src="" alt=""> 
             <p> Lorem ipsum, dolor sit amet consectetur adipisicing elit. In natus, sapiente esse recusandae,
               saepe voluptatum aliquam id dolorem distinctio vero illum quod quae obcaecati 
               ullam doloremque cum reprehenderit magnam porro!</p>     
@@ -269,98 +286,110 @@
            </div>
 
       </div>
-    </section>
+     </section>
  
-    <section class="contact" id="contact"> 
-      <h1 class="heading"> <span> contact </span> us </h1>
-    </section>
+     <section class="contact" id="contact"> 
+       <h1 class="heading"> <span> contact </span> us </h1>
+     </section>
 
-    <div class="row"> 
-         
-      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d681.9636301219305!2d21.146221400586107!3d42.65302560809877!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x13549f47a5602081%3A0xec721f5ff5e05ca0!2sUBT%20College!5e0!3m2!1sen!2s!4v1699829392257!5m2!1sen!2s" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+     <div class="row"> 
+      <!-- IFRAME me qit naj lokacion random ose naj lokacion naj kafeje masi e kena kafe shop 
+        ose hiq pra masi o veq webiste pa lokal , pa lokal ku pe don lokacionin ? lmao -->
+      <iframe class="map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d681.9636301219305!2d21.146221400586107!3d42.65302560809877!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x13549f47a5602081%3A0xec721f5ff5e05ca0!2sUBT%20College!5e0!3m2!1sen!2s!4v1699829392257!5m2!1sen!2s" 
+      width="600" height="450" style="border:0;" allowfullscreen="" 
+      loading="lazy" referrerpolicy="no-referrer-when-downgrade"> 
+      </iframe>
 
       <form action=""> 
         <h3> get in touch </h3>
+
         <div class="inputBox">
           <span class="fas fa-user"> </span>
           <input type="text" placeholder="name">
         </div>
+
         <div class="inputBox">
           <span class="fas fa-envelope"> </span>
           <input type="email" placeholder="email">
         </div>
+
         <div class="inputBox">
           <span class="fas fa-phone"> </span>
           <input type="number" placeholder="number">
         </div>
-        <input type="submit" value="contact now" class="btn"> 
 
-      </form>
+        <input type="submit" value="contact now" class="btn">  
+
+        </form>
 
     </div>
 
   </section>
 
 
-   <section class="blogs" id="blogs">
+          <section class="blogs" id="blogs">
 
-   <h1 class="heading"> our <span> blogs </span> </h1>
+          <h1 class="heading"> our <span> blogs </span> </h1>
 
-   <div class="box-container"> 
+          <div class="box-container"> 
 
-   <div class="box"> 
-    <div class="image">
-      <img src=" ">
+          <div class="box">
 
-    </div>
-   </div class="content">
-    <a href="#" class="title" tasty and refreshing coffee> </a>
-    <span> by Uron and Abedin , 10 November 2023 </span>
-    <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Impedit, laborum? </p>
-    <a href="#" class="btn"> read more </a>
-   </div>
-</div>
+           <div class="image">
+             <img src="" alt="">
+           </div>
 
-<div class="box"> 
-  <div class="image">
-    <img src=" ">
+           </div class="content">
+             <a href="#" class="title">tasty and refreshing coffee</a>
+             <span> by Uron and Abedin , 13 November 2023 </span>
+             <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Impedit, laborum? </p>
+             <a href="#" class="btn"> read more </a>
+           </div>
+        </div>
 
-  </div>
- </div class="content">
-  <a href="#" class="title" tasty and refreshing coffee> </a>
-  <span> by Uron and Abedin , 10 November 2023 </span>
-  <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Impedit, laborum? </p>
-  <a href="#" class="btn"> read more </a>
- </div>
-</div>
+        <div class="box">
 
-<div class="box"> 
-  <div class="image">
-    <img src=" ">
+         <div class="image">
+             <img src="" alt="">
+         </div>
 
-  </div>
- </div class="content">
-  <a href="#" class="title" tasty and refreshing coffee> </a>
-  <span> by Uron and Abedin , 10 November 2023 </span>
-  <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Impedit, laborum? </p>
-  <a href="#" class="btn"> read more </a>
- </div>
-</div>
+          </div class="content">
+          <a href="#" class="title">tasty and refreshing coffee</a>
+          <span> by Uron and Abedin , 13 November 2023 </span>
+          <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Impedit, laborum? </p>
+          <a href="#" class="btn"> read more </a>
+          </div>
+     </div>
+
+           <div class="box">
+
+           <div class="image">
+             <img src="" alt="">
+          </div>
+
+          </div class="content">
+              <a href="#" class="title">tasty and refreshing coffee</a>
+              <span> by Uron and Abedin , 13 November 2023 </span>
+               <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Impedit, laborum? </p>
+               <a href="#" class="btn"> read more </a>
+           </div>
+       </div>
 
    </section>
 
     <section class="footer"> 
 
   
-      <div class="">
-        <a href="#" class = "fab fa-facebook"> </a>
-        <a href="#" class = "fab fa-twitter"> </a>
+      <div class="share">
+        <a href="#" class = "fab fa-Facebook"> </a>
+        <a href="#" class = "fab fa-Twitter"> </a>
         <a href="#" class = "fab fa-YouTube"> </a>
         <a href="#" class = "fab fa-instagram"> </a>
         <a href="#" class = "fab fa-linkedin"> </a>
+        <a href="#" class = "fab fa-pinterest"> </a>
       </div>
 
-       <div class=""> 
+       <div class="links"> 
         <a href="#"> home </a>
         <a href="#"> about </a> 
         <a href="#"> menu </a>
@@ -370,13 +399,15 @@
         <a href="#"> blogs </a>
       </div>
 
-      <div class="credit"> create by <span> Abedin and Uron</span> | ALL RIGHTS RESERVED BITCH </div>
+      <div class="credit"> create by <span> Abedin and Uron Bitch !! </span> | ALL RIGHTS RESERVED BITCH </div>
 
     </section>
 
    </div>
 
    </section>
+
+  <script src = "js.script.js"> </script>
 
   </body>
 </html>
