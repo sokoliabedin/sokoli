@@ -75,7 +75,7 @@ section {
 }
 
 .header {
-  background: var(--bg);
+  background: rgba(67, 59, 59, 0.3);
   display: flex;
   align-items: center;
   justify-content: space-between;
