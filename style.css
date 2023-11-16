@@ -4,11 +4,12 @@
   --main-color: #d3ad7f;
   --black: #13131a;
   --background-color: #010103;
+  --bg:#010103;
   --border: 0.1rem solid rgba(255, 255, 255, 0.3);
 }
 
 * {
-  font-family: "Roboto", "sans-serif";
+  font-family: 'Roboto', sans-serif;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -93,7 +94,7 @@ section {
 }
 
 .header .navbar a {
-  margin: 0 1rem; /* ose 0.1 */
+  margin: 0 1rem; 
   font-size: 1.6rem;
   color: #fff;
 }
@@ -104,7 +105,7 @@ section {
   padding-bottom: 0.5rem;
 }
 
-.header .icons div {
+.header .icons div{
   color: #fff;
   cursor: pointer;
   font-size: 2.5rem;
@@ -166,7 +167,10 @@ section {
   padding: 0 1.5rem;
 }
 
-.header .cart-items-container .active {
+.header .cart-items-container.active {
+  right: 0;
+}
+#active{
   right: 0;
 }
 
@@ -215,7 +219,7 @@ section {
   min-height: 100vh;
   display: flex;
   align-items: center;
-  background: url(images/First.jpg) no-repeat; /* image change */
+  background: url(images/First.jpg) no-repeat;
   background-size: cover;
   background-position: center;
 }
@@ -232,10 +236,10 @@ section {
 
 .home .content p {
   font-size: 2rem;
-  font-weight: lighter;
+  font-weight: normal;
   line-height: 1.8;
   padding: 1rem 0;
-  color: #eee;
+  color: #fff;
 }
 
 .about .row {
