@@ -290,19 +290,19 @@ section {
   height: 10rem;
 }
 
-.menu .box .container .box h3 {
+.menu .box-container .box h3 {
   color: #fff;
   font-size: 2rem;
   padding: 1rem 0;
 }
 
-.menu .box .container .box .price {
+.menu .box-container .price {
   color: #fff;
   font-size: 2.5rem;
   padding: 0.5rem 0;
 }
 
-.menu .box .container .box .price span {
+.menu .box-container .price span {
   font-size: 1.5rem;
   text-decoration: line-through;
   font-weight: lighter;
@@ -375,13 +375,16 @@ section {
   font-size: 1.5rem;
 }
 
-.review .box-container {
+.review .box-container{
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(30rem, 1fr));
   gap: 1.5rem;
 }
 
-.review .box-container .box {
+.review .box-container{
+  padding-left: 7rem;
+}
+.review .box-container .box{
   border: var(--border);
   text-align: center;
   padding: 3rem 2rem;
@@ -414,6 +417,7 @@ section {
 
 .contact .row {
   display: flex;
+
   background: var(--black);
   flex-wrap: wrap;
   gap: 1rem;
@@ -453,7 +457,7 @@ section {
 }
 
 .contact .row form .inputBox input {
-  width: 100rem;
+  width: 10rem;
   padding: 2rem;
   font-size: 1.7rem;
   color: #fff;
@@ -574,6 +578,9 @@ section {
   html {
     font-size: 55%;
   }
+  .review .box-container{
+    padding: 0%;
+  }
 
   .header {
     padding: 1.5rem 2rem;
@@ -588,7 +595,9 @@ section {
   #menu-btn {
     display: inline-block;
   }
-
+  .review .box-container{
+    padding: 0%;
+  }
   .header .navbar {
     position: absolute;
     top: 100%;
@@ -633,5 +642,8 @@ section {
 @media (max-width: 450px) {
   html {
     font-size: 50%;
+  }
+  .review .box-container{
+    padding: 0%;
   }
 }
