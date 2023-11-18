@@ -27,3 +27,60 @@ window.onscroll = () => {
   searchForm.classList.remove("active");
   cartItem.classList.remove("active");
 };
+
+
+const cartItemsContainer = document.querySelector('.cart-items-container');
+const removeButtons = cartItemsContainer.querySelectorAll('.fas.fa-times');
+
+
+function updateCartContainerVisibility() {
+  const cartItems = cartItemsContainer.querySelectorAll('.cart-item');
+
+  if (cartItems.length === 0) {
+    cartItemsContainer.classList.remove('active');
+    alert('Your cart is empty. Please add an item.');
+  } else {
+    cartItemsContainer.classList.add('active');
+  }
+}
+
+removeButtons.forEach(button => {
+  button.addEventListener('click', () => {
+    button.parentElement.remove();
+    updateCartContainerVisibility();
+  });
+});
+
+const element = document.querySelector('.cart-items-container');
+
+function addHTML(htmlCode) {
+  if (htmlCode) {
+    const existingItem = element.querySelector('.cart-item[data-html-code="' + htmlCode + '"]');
+
+    if (existingItem) {
+      alert('You can only add 1 item to the cart');
+      return;
+    }
+
+    var newDiv = document.createElement('div');
+    var addItem =
+      '<span class="fas fa-times remove-item"> </span><img src="images/' + htmlCode +'.jpg" alt=""> <div class="content"> <h3>cart item 01</h3> <div class="price">$6.99</div></div>';
+    newDiv.classList = 'cart-item';
+    newDiv.setAttribute('data-html-code', htmlCode);
+    newDiv.innerHTML = addItem;
+
+    element.prepend(newDiv);
+
+    var removeButton = newDiv.querySelector('.remove-item');
+    removeButton.addEventListener('click', function () {
+      newDiv.remove();
+      updateCartContainerVisibility();
+    });
+
+    updateCartContainerVisibility(); 
+  } else {
+    console.error('Element with ID ' + htmlCode + ' not found');
+  }
+}
+
+

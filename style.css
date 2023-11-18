@@ -457,7 +457,7 @@ section {
 }
 
 .contact .row form .inputBox input {
-  width: 10rem;
+  width: 100rem;
   padding: 2rem;
   font-size: 1.7rem;
   color: #fff;
@@ -589,6 +589,14 @@ section {
   section {
     padding: 2rem;
   }
+  .contact .row form .inputBox input {
+    width: 20rem;
+    padding: 2rem;
+    font-size: 1.7rem;
+    color: #fff;
+    text-transform: none;
+    background: none;
+  }
 }
 
 @media (max-width: 768px) {
@@ -605,8 +613,16 @@ section {
     background: #fff;
     width: 30rem;
     height: clac(100hv - 9.5rem);
+    
   }
-
+  .contact .row form .inputBox input {
+    width: 20rem;
+    padding: 2rem;
+    font-size: 1.7rem;
+    color: #fff;
+    text-transform: none;
+    background: none;
+  }
   .header .navbar.active {
     right: 0;
   }
@@ -645,5 +661,13 @@ section {
   }
   .review .box-container{
     padding: 0%;
+  }
+  .contact .row form .inputBox input {
+    width: 10rem;
+    padding: 2rem;
+    font-size: 1.7rem;
+    color: #fff;
+    text-transform: none;
+    background: none;
   }
 }
