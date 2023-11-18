@@ -24,7 +24,7 @@ document.querySelector('#cart-btn').onclick = () => {
 
 window.onscroll = () => {
   navbar.classList.remove("active");
-  searchForm.classList.remove("active");
+  /*searchForm.classList.remove("active");*/
   cartItem.classList.remove("active");
 };
 
@@ -84,3 +84,26 @@ function addHTML(htmlCode) {
 }
 
 
+document.addEventListener('DOMContentLoaded', function () {
+  const searchBox = document.getElementById('search-box');
+  const menuSection = document.getElementById('menu');
+  const menuItems = document.querySelectorAll('.box');
+
+  searchBox.addEventListener('input', function () {
+    const searchTerm = searchBox.value.toLowerCase().trim();
+
+    menuItems.forEach(item => {
+      const itemName = item.querySelector('h3').textContent.toLowerCase();
+
+      // Check if the item name includes the search term
+      if (itemName.includes(searchTerm)) {
+        item.style.display = 'block';
+      } else {
+        item.style.display = 'none';
+      }
+    });
+
+    // Scroll immediately to the menu section when typing in the search bar
+    menuSection.scrollIntoView({ behavior: 'auto' });
+  });
+});
