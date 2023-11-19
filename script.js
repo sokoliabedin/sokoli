@@ -107,3 +107,57 @@ document.addEventListener('DOMContentLoaded', function () {
     menuSection.scrollIntoView({ behavior: 'auto' });
   });
 });
+
+
+document.addEventListener("DOMContentLoaded", function() {
+  // Get references to the search-related elements and other sections
+  var searchInput = document.getElementById('search-box');
+  var menuSection = document.getElementById('menu');
+  var otherSections = document.querySelectorAll('section:not(#menu)');
+
+  // Function to toggle the visibility of sections based on search input
+  function toggleSections() {
+    if (searchInput.value.trim() !== '') {
+      // If there is text in the search bar, hide all sections except for the menu
+      hideSections();
+    } else {
+      // If the search bar is empty, show all sections
+      showSections();
+    }
+  }
+
+  // Attach the toggleSections function to the input event of the search bar
+  searchInput.addEventListener('input', toggleSections);
+
+  // Function to show all sections
+  function showSections() {
+    menuSection.style.display = '';  // Show the menu
+    // Show other sections
+    otherSections.forEach(function(section) {
+      section.style.display = 'flex';
+    });
+  }
+
+  // Function to hide all sections except for the menu
+  function hideSections() {
+    menuSection.style.display = 'block';  // Show the menu
+    // Hide other sections
+    otherSections.forEach(function(section) {
+      section.style.display = 'none';
+    });
+  }
+
+  // Function to show everything when the search bar is cleared or the search button is clicked
+  function showEverything() {
+    showSections();
+
+    // Clear the search bar
+    searchInput.value = '';
+  }
+
+  // Get reference to the search button
+  var searchBtn = document.getElementById('search-btn');
+
+  // Attach the showEverything function to the click event of the search button
+  searchBtn.addEventListener('click', showEverything);
+});
