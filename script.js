@@ -134,13 +134,13 @@ document.addEventListener("DOMContentLoaded", function() {
     menuSection.style.display = '';  // Show the menu
     // Show other sections
     otherSections.forEach(function(section) {
-      section.style.display = 'flex';
+      section.style.display = '';
     });
   }
 
   // Function to hide all sections except for the menu
   function hideSections() {
-    menuSection.style.display = 'block';  // Show the menu
+    menuSection.style.display = '';  // Show the menu
     // Hide other sections
     otherSections.forEach(function(section) {
       section.style.display = 'none';
