@@ -16,10 +16,10 @@ document.querySelector("#search-btn").onclick = () => {
 
 let cartItem = document.querySelector(".cart-items-container");
 
-document.querySelector('#cart-btn').onclick = () => {
-  cartItem.classList.toggle('active');
-  navbar.classList.remove('active');
-  searchForm.classList.remove('active');
+document.querySelector("#cart-btn").onclick = () => {
+  cartItem.classList.toggle("active");
+  navbar.classList.remove("active");
+  searchForm.classList.remove("active");
 };
 
 window.onscroll = () => {
@@ -28,96 +28,96 @@ window.onscroll = () => {
   cartItem.classList.remove("active");
 };
 
-
-const cartItemsContainer = document.querySelector('.cart-items-container');
-const removeButtons = cartItemsContainer.querySelectorAll('.fas.fa-times');
-
+const cartItemsContainer = document.querySelector(".cart-items-container");
+const removeButtons = cartItemsContainer.querySelectorAll(".fas.fa-times");
 
 function updateCartContainerVisibility() {
-  const cartItems = cartItemsContainer.querySelectorAll('.cart-item');
+  const cartItems = cartItemsContainer.querySelectorAll(".cart-item");
 
   if (cartItems.length === 0) {
-    cartItemsContainer.classList.remove('active');
-    alert('Your cart is empty. Please add an item.');
+    cartItemsContainer.classList.remove("active");
+    alert("Your cart is empty. Please add an item.");
   } else {
-    cartItemsContainer.classList.add('active');
+    cartItemsContainer.classList.add("active");
   }
 }
 
-removeButtons.forEach(button => {
-  button.addEventListener('click', () => {
+removeButtons.forEach((button) => {
+  button.addEventListener("click", () => {
     button.parentElement.remove();
     updateCartContainerVisibility();
   });
 });
 
-const element = document.querySelector('.cart-items-container');
+const element = document.querySelector(".cart-items-container");
 
-function addHTML(htmlCode) {
+function addHTML(NameofProduct,htmlCode , price) {
   if (htmlCode) {
-    const existingItem = element.querySelector('.cart-item[data-html-code="' + htmlCode + '"]');
+    const existingItem = element.querySelector(
+      '.cart-item[data-html-code="' + htmlCode + '"]'
+    );
 
     if (existingItem) {
-      alert('You can only add 1 item to the cart');
+      alert("You can only add 1 item to the cart");
       return;
     }
 
-    var newDiv = document.createElement('div');
+    var newDiv = document.createElement("div");
     var addItem =
-      '<span class="fas fa-times remove-item"> </span><img src="images/' + htmlCode +'.jpg" alt=""> <div class="content"> <h3>cart item 01</h3> <div class="price">$6.99</div></div>';
-    newDiv.classList = 'cart-item';
-    newDiv.setAttribute('data-html-code', htmlCode);
+      '<span class="fas fa-times remove-item"> </span><img src="images/' +
+      htmlCode +'.jpg" alt=""> <div class="content"> <h3>'+NameofProduct +'</h3> <div class="price"> $'
+      +price +' </div></div>';
+    newDiv.classList = "cart-item";
+    newDiv.setAttribute("data-html-code", htmlCode);
     newDiv.innerHTML = addItem;
 
     element.prepend(newDiv);
 
-    var removeButton = newDiv.querySelector('.remove-item');
-    removeButton.addEventListener('click', function () {
+    var removeButton = newDiv.querySelector(".remove-item");
+    removeButton.addEventListener("click", function () {
       newDiv.remove();
       updateCartContainerVisibility();
     });
 
-    updateCartContainerVisibility(); 
+    updateCartContainerVisibility();
   } else {
-    console.error('Element with ID ' + htmlCode + ' not found');
+    console.error("Element with ID " + htmlCode + " not found");
   }
 }
 
+document.addEventListener("DOMContentLoaded", function () {
+  const searchBox = document.getElementById("search-box");
+  const menuSection = document.getElementById("menu");
+  const menuItems = document.querySelectorAll(".box");
 
-document.addEventListener('DOMContentLoaded', function () {
-  const searchBox = document.getElementById('search-box');
-  const menuSection = document.getElementById('menu');
-  const menuItems = document.querySelectorAll('.box');
-
-  searchBox.addEventListener('input', function () {
+  searchBox.addEventListener("input", function () {
     const searchTerm = searchBox.value.toLowerCase().trim();
 
-    menuItems.forEach(item => {
-      const itemName = item.querySelector('h3').textContent.toLowerCase();
+    menuItems.forEach((item) => {
+      const itemName = item.querySelector("h3").textContent.toLowerCase();
 
       // Check if the item name includes the search term
       if (itemName.includes(searchTerm)) {
-        item.style.display = 'block';
+        item.style.display = "block";
       } else {
-        item.style.display = 'none';
+        item.style.display = "none";
       }
     });
 
     // Scroll immediately to the menu section when typing in the search bar
-    menuSection.scrollIntoView({ behavior: 'auto' });
+    menuSection.scrollIntoView({ behavior: "auto" });
   });
 });
 
-
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function () {
   // Get references to the search-related elements and other sections
-  var searchInput = document.getElementById('search-box');
-  var menuSection = document.getElementById('menu');
-  var otherSections = document.querySelectorAll('section:not(#menu)');
+  var searchInput = document.getElementById("search-box");
+  var menuSection = document.getElementById("menu");
+  var otherSections = document.querySelectorAll("section:not(#menu)");
 
   // Function to toggle the visibility of sections based on search input
   function toggleSections() {
-    if (searchInput.value.trim() !== '') {
+    if (searchInput.value.trim() !== "") {
       // If there is text in the search bar, hide all sections except for the menu
       hideSections();
     } else {
@@ -127,23 +127,23 @@ document.addEventListener("DOMContentLoaded", function() {
   }
 
   // Attach the toggleSections function to the input event of the search bar
-  searchInput.addEventListener('input', toggleSections);
+  searchInput.addEventListener("input", toggleSections);
 
   // Function to show all sections
   function showSections() {
-    menuSection.style.display = '';  // Show the menu
+    menuSection.style.display = ""; // Show the menu
     // Show other sections
-    otherSections.forEach(function(section) {
-      section.style.display = '';
+    otherSections.forEach(function (section) {
+      section.style.display = "";
     });
   }
 
   // Function to hide all sections except for the menu
   function hideSections() {
-    menuSection.style.display = '';  // Show the menu
+    menuSection.style.display = ""; // Show the menu
     // Hide other sections
-    otherSections.forEach(function(section) {
-      section.style.display = 'none';
+    otherSections.forEach(function (section) {
+      section.style.display = "none";
     });
   }
 
@@ -152,12 +152,12 @@ document.addEventListener("DOMContentLoaded", function() {
     showSections();
 
     // Clear the search bar
-    searchInput.value = '';
+    searchInput.value = "";
   }
 
   // Get reference to the search button
-  var searchBtn = document.getElementById('search-btn');
+  var searchBtn = document.getElementById("search-btn");
 
   // Attach the showEverything function to the click event of the search button
-  searchBtn.addEventListener('click', showEverything);
+  searchBtn.addEventListener("click", showEverything);
 });
