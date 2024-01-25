@@ -156,8 +156,64 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   // Get reference to the search button
+
   var searchBtn = document.getElementById("search-btn");
 
   // Attach the showEverything function to the click event of the search button
   searchBtn.addEventListener("click", showEverything);
+});
+
+
+// ---------------------------------------------  Login ---------------------------------------------------------------------
+function validateLogin(username, password) {
+  const usernameRegex = /^.{8,13}$/;
+  const passwordRegex = /^(?=.*[A-Z])(?=.*\d)(?=.*[@_])[A-Za-z\d@_]{8,13}$/;
+
+  const isUsernameValid = usernameRegex.test(username);
+  const isPasswordValid = passwordRegex.test(password);
+
+  return isUsernameValid && isPasswordValid;
+}
+// --------------------------------------------- Validation here ---------------------------------------------------------------------
+
+// Get references to the login and registration forms
+let signinForm = document.querySelector("#signinForm");
+let signupForm = document.querySelector("#signupForm");
+
+// Add event listener for the login form submission
+signinForm.addEventListener("submit", function (event) {
+  // Prevent the default form submission to handle validation
+  event.preventDefault();
+
+  // Get values from the login form inputs
+  let username = signinForm.querySelector('input[name="username"]').value;
+  let password = signinForm.querySelector('input[name="password"]').value;
+
+  // Validate login inputs
+  if (validateLogin(username, password)) {
+    // If validation passes, submit the form
+    signinForm.submit();
+  } else {
+    alert("Invalid username or password. Please try again.");
+  }
+});
+
+// Add event listener for the registration form submission
+signupForm.addEventListener("submit", function (event) {
+  // Prevent the default form submission to handle validation
+  event.preventDefault();
+
+  // Get values from the registration form inputs
+  let newUsername = signupForm.querySelector('input[name="username"]').value;
+  let email = signupForm.querySelector('input[name="email"]').value;
+  let newPassword = signupForm.querySelector('input[name="password"]').value;
+  let confirmPassword = signupForm.querySelector("input#password").value;
+
+  // Validate registration inputs
+  if (validateRegistration(newUsername, email, newPassword, confirmPassword)) {
+    // If validation passes, submit the form
+    signupForm.submit();
+  } else {
+    alert("Invalid registration details. Please check your inputs.");
+  }
 });
