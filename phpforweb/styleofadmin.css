@@ -1,0 +1,613 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap");
+:root {
+  --main-color: #d3ad7f;
+  --black: #13131a;
+  --background-color: #010103;
+  --bg: #010103;
+  --border: 0.1rem solid rgba(255, 255, 255, 0.3);
+}
+
+.parent {
+  display: grid;
+  grid-template-columns: 0.2fr 1fr;
+  grid-template-rows: repeat(6, 1fr);
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+}
+
+* {
+  font-family: "Roboto", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  border-radius: 0;
+  text-decoration: none;
+  text-transform: capitalize;
+  transition: 0.2s linear;
+  background-color: var(--bg);
+}
+
+/*------------------------------------------------------- HTML ---------------------------------------------------------------------- */
+
+html {
+  font-size: 62.5%;
+  overflow-x: hidden;
+  scroll-padding-top: 9rem;
+  scroll-behavior: smooth;
+}
+
+html::-webkit-scrollbar {
+  width: 0.8rem;
+}
+
+html::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+html::-webkit-scrollbar-thumb {
+  background: #fff;
+  border-radius: 5rem;
+}
+
+/*------------------------------------------------------- BODY  ---------------------------------------------------------------------- */
+
+body {
+  background: var(--bg);
+  font-family: Arial, sans-serif;
+  margin-bottom: 30px;
+  color: #fff;
+}
+
+body,
+h2,
+p,
+ul,
+li {
+  margin: 0;
+  padding: 0;
+}
+
+/*------------------------------------------------------- FORMS  ---------------------------------------------------------------------- */
+
+form {
+  margin-top: 20px;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  margin-right: 250px !important;
+}
+
+input[type="text"],
+input[type="number"],
+input[type="file"] {
+  margin-bottom: 10px;
+  padding: 8px;
+}
+
+input[type="submit"] {
+  padding: 10px;
+  background-color: #007bff;
+  color: #fff;
+  cursor: pointer;
+  border: none;
+}
+
+form > * {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+/*------------------------------------------------------- FIRST PAGE  ---------------------------------------------------------------------- */
+
+div {
+  margin-left: 575px;
+  padding: 20px;
+  width: 71% !important;
+  font-size: 15px;
+  margin-top: 150px;
+  border: 0 !important;
+}
+
+strong {
+  color: white;
+  font-size: 15px;
+  margin-left: 65px;
+}
+
+label[for="textData"] ~ strong {
+  margin-right: 20px !important;
+}
+
+h1 {
+  color: white;
+  left: 1px;
+  position: relative;
+  top: -100px !important;
+  text-decoration: underline;
+}
+
+.welcome-heading {
+  color: white;
+  font-size: 32px;
+  margin-left: 600px;
+  position: relative;
+  top: -400px !important;
+  text-decoration: none;
+}
+
+label {
+  display: block;
+  margin: 10px 0 5px;
+  font-weight: bold;
+  margin-right: 20px !important;
+}
+
+input[type="text"],
+input[type="number"],
+input[type="file"],
+textarea {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 2S0px;
+  color: white;
+}
+
+input[type="submit"] {
+  padding: 10px;
+  background-color: #007bff;
+  color: #fff;
+  cursor: pointer;
+  border: none;
+}
+
+input[type="radio"] {
+  margin-right: 5px;
+}
+
+form:last-of-type input[type="radio"],
+form:last-of-type input[type="submit"] {
+  margin-top: 10px;
+}
+
+header {
+  background-color: blue;
+  color: #fff;
+  text-align: center;
+  padding: 10px;
+  border-radius: 10px 10px 0 0;
+}
+
+header a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+header a:hover {
+  text-decoration: underline;
+}
+
+/*------------------------------------------------------- SECOND PAGE ---------------------------------------------------------------------- */
+/*-------------------------------------------------------  PRODUCTS ---------------------------------------------------------------------- */
+
+label[for="productName"] {
+  display: block;
+  font-weight: bold;
+  padding: 10px;
+  margin-bottom: 5px;
+  margin-left: 264px;
+  font-size: 15px;
+}
+
+input[name="productName"] {
+  width: 30%;
+  padding: 8px;
+  margin-bottom: 10px;
+  margin-left: 100px;
+  border: 1px solid #ccc;
+  border-radius: 5px 0 0 5px;
+}
+
+label[for="productName"]:after {
+  content: "";
+  color: red;
+  margin-left: 5px;
+}
+
+label[for="productPrice"] {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+  margin-left: 277px;
+  font-size: 15px;
+}
+
+input[name="productPrice"] {
+  width: 30%;
+  padding: 8px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px 0 0 5px;
+  margin-left: 100px;
+}
+
+label[for="productPrice"]:after {
+  content: "";
+  color: red;
+  margin-left: 5px;
+  font-size: 15px;
+}
+
+label[for="productImage"] {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+  margin-left: 270px;
+  font-size: 15px;
+}
+
+input[name="productImage"] {
+  width: 18%;
+  padding: 15px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-left: 180px;
+}
+
+label[for="productImage"]:after {
+  content: "";
+  color: red;
+  margin-left: 5px;
+}
+
+/*-------------------------------------------------------- Menu ----------------------------------------------------------------------*/
+label[for="menuItemName"] {
+  display: block;
+  font-weight: bold;
+  margin-left: 1060px !important;
+  position: relative !important;
+  margin-top: -300px !important;
+  font-size: 15px;
+}
+
+input[name="menuItemName"] {
+  width: 30%;
+  padding: 8px;
+  margin-left: 900px;
+  border: 1px solid #ccc;
+  border-radius: 5px 0 0 5px;
+  position: relative;
+  bottom: -15px !important;
+}
+
+label[for="menuItemName"]:after {
+  content: "";
+  color: red;
+  margin-left: 900px;
+}
+/*  Price */
+label[for="menuItemPrice"] {
+  width: 30%;
+  padding: 8px;
+  margin-left: 1060px !important;
+  font-size: 15px;
+}
+
+input[name="menuItemPrice"] {
+  width: 30%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px 0 0 5px;
+  margin-left: 900px;
+}
+
+label[for="menuItemPrice"]:after {
+  content: "";
+  margin-left: 900px;
+}
+
+label[for="menuItemImage"] {
+  font-weight: bold;
+  margin-left: 1060px !important;
+  position: relative !important;
+  bottom: 10px !important;
+  font-size: 15px;
+}
+
+input[name="menuItemImage"] {
+  width: 18%;
+  padding: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-left: 1000px;
+}
+
+label[for="menuItemImage"]:after {
+  content: "";
+  margin-left: 1000px;
+}
+
+/*----------------------------------------------------- About us ---------------------------------------------------------------------*/
+
+label[for="aboutUsHeading"] {
+  font-weight: bold;
+  padding: 10px;
+  margin-left: 244px;
+  font-size: 15px;
+}
+
+input[name="aboutUsHeading"] {
+  width: 30%;
+  padding: 8px;
+  margin-bottom: 10px;
+  margin-left: 100px;
+  border: 1px solid #ccc;
+  border-radius: 5px 0 0 5px;
+}
+
+label[for="aboutUsHeading"]:after {
+  content: "";
+  color: red;
+  margin-left: 5px;
+}
+
+label[for="aboutUsContent"] {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+  margin-left: 250px;
+  font-size: 15px;
+}
+
+textarea[name="aboutUsContent"] {
+  width: 30%;
+  padding: 8px;
+  display: block;
+  font-weight: bold;
+  margin-bottom: 10px;
+  border: 1px solid #ccc !important;
+  border-radius: 1px 1px 1px 1px !important;
+  margin-left: 100px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+label[for="aboutUsContent"]:after {
+  content: "";
+  color: red;
+  margin-left: 5px;
+}
+
+label[for="aboutUsImage"] {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+  margin-left: 250px;
+  font-size: 15px;
+}
+
+input[name="aboutUsImage"] {
+  width: 18%;
+  padding: 15px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-left: 180px;
+}
+
+label[for="aboutUsImage"]:after {
+  content: "";
+  color: red;
+  margin-left: 5px;
+}
+
+/* ---------------------------------------------------------- Add Products --------------------------------------------------------------*/
+
+.addProduct {
+  background-color: #2ecc71;
+  color: #fff;
+  padding: 15px 25px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  position: relative;
+  top: -120px !important;
+  margin-left: 250px;
+  font-size: 15px;
+}
+
+.addProduct:hover {
+  background-color: #27ae60;
+}
+
+/*------------------------------------------------------ About Us Button ------------------------------------------------------------- */
+
+.addAboutUsButton {
+  margin-left: 225px !important;
+  margin-bottom: 45px;
+  background-color: #007bff;
+  color: blue;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.addAboutUsButton:hover {
+  background-color: #27ae60;
+}
+
+/*------------------------------------------------------- Add Menu Item -------------------------------------------------------- */
+
+.AddMenuItem {
+  margin-left: 1055px !important;
+  margin-bottom: 45px;
+  margin-top: 55px !important;
+  background-color: #007bff;
+  color: blue;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  position: relative !important;
+  top: -50px !important;
+  font-size: 15px;
+}
+
+.AddMenuItem:hover {
+  background-color: #27ae60 !important;
+}
+
+/* ---------------------------------------------------------- LOGOUT NAVBAR -------------------------------------------------------------------*/
+
+.navbar {
+  background-color: #333 !important;
+  overflow: hidden;
+  height: 85px;
+}
+
+.navbar a {
+  float: right;
+  display: block;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  margin-right: 750px;
+  margin-top: 12px;
+  background-color: #333 !important;
+  font-size: 26px;
+  color: white;
+  transition: color 0.3s, background-color 0.3s;
+}
+
+.navbar a:hover {
+  color: gray;
+  background-color: #333 !important;
+  text-decoration: underline;
+}
+
+/*------------------------------------------------------- SELECT ADMIN PART -------------------------------------------------------------------- */
+
+.products-info form:last-of-type label {
+  font-size: 18px;
+  color: white;
+  margin-left: 250px;
+}
+
+.list-admin li {
+  cursor: pointer;
+  font-size: 14px;
+  color: white;
+  position: relative;
+}
+
+.list-admin li:nth-child(1) {
+  position: relative;
+  right: -420px !important;
+}
+
+.list-admin li:nth-child(2) {
+  position: relative;
+  left: -350px !important;
+  top: -50px !important;
+}
+
+.list-admin li label {
+  font-size: 18px;
+  color: white;
+  position: absolute !important;
+  left: -210px !important;
+  top: -14px;
+}
+
+.list-admin li input[type="checkbox"]:checked + label {
+  font-weight: bold;
+  color: #008000;
+}
+
+/*------------------------------------------------------- ADMIN DATA ANALYSIS -------------------------------------------------------------------- */
+
+#activeAdmin {
+  width: 15%;
+  font-size: 15px;
+  word-wrap: break-word;
+  white-space: nowrap;
+  color: white;
+  position: relative !important;
+  top: -44px !important;
+  margin-bottom: 30px !important;
+  background-color: black;
+}
+
+.data-analysis h2.data-display {
+  font-size: 22px;
+  font-weight: bold;
+  color: white;
+  position: relative !important;
+  left: 1030px !important;
+  top: -444px !important;
+  width: 0%;
+  word-wrap: break-word;
+  white-space: nowrap;
+}
+
+.data-analysis h2.admin-activity-log {
+  font-size: 22px;
+  font-weight: bold;
+  color: white;
+  position: relative;
+  left: 1010px !important;
+  top: -602px !important;
+  width: 0%;
+  word-wrap: break-word;
+  white-space: nowrap;
+}
+
+.data-analysis input[type="data-label"] {
+  background-color: #f5f5f5;
+  border: 2px solid #ddd;
+  position: relative;
+  top: -520px !important;
+  width: 95%;
+}
+
+.data-analysis input[type="admin-activity"] {
+  background-color: #e0e0e0;
+  border: 2px solid #ccc;
+  position: relative !important;
+  top: -430px !important;
+  width: 95%;
+}
+
+/*------------------------------------------------------- RENSPOSITIVITY --------------------------------------------------------------*/
+/*------------------------------------------------------- MEDIA QUIERIES --------------------------------------------------------------*/
+
+@media (max-width: 991px) {
+  html {
+    font-size: 55%;
+  }
+  .review .box-container {
+    padding: 0%;
+  }
+
+  .header {
+    padding: 1.5rem 2rem;
+  }
+
+  section {
+    padding: 2rem;
+  }
+  .contact .row form .inputBox input {
+    width: 20rem;
+    padding: 2rem;
+    font-size: 1.7rem;
+    color: #fff;
+    text-transform: none;
+    background: none;
+  }
+}

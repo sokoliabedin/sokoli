@@ -1,60 +1,103 @@
 <!DOCTYPE html>
-
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Animated Login & Registration Form</title>
-    <link rel="stylesheet" href="styleofregister.css ">
+    <link rel="stylesheet" href="styleforregister.css" />
   </head>
-
   <body>
+    <header class="header">
+      <a href="#" class="logo">
+        <img src="images/logo.png" />
+      </a>
+      <nav class="navbar">
+        <a class="changeprofile" id="changeprofile">Change Profile</a>
+        <a class="goback" id="goback">Go Back </a>
+      </nav>
+    </header>
+
     <div class="container">
       <span> </span>
       <span> </span>
       <span> </span>
       <span> </span>
 
-      <form id="signinForm">
+      <!--------------------------------------------------------- Login ---------------------------------------------------->
+      <form id="signinForm" action="" method="post">
         <h2>Log in</h2>
-
         <div class="inputBox">
-          <input type="text" placeholder="Username" />
+          <input type="text" placeholder="Username" name="username" />
         </div>
-
         <div class="inputBox">
-          <input type="password" placeholder="Password" />
+          <input
+            type="password"
+            placeholder="Password"
+            name="password"
+            id="loginPassword"
+            required
+          />
+          <span
+            class="password-toggle"
+            onclick="togglePassword('loginPassword')"
+            >👁️</span
+          >
         </div>
-
         <div class="inputBox group">
           <a href="#"> Forgot Password </a>
           <a href="#" id="signup"> Signup </a>
         </div>
-
         <div class="inputBox">
           <input type="submit" value="Sign in" />
         </div>
       </form>
 
-      <form id="signupForm">
+      <!--------------------------------------------------------- Registration ---------------------------------------------------->
+      <form id="signupForm" action="" method="post">
         <h2>Registration</h2>
-
         <div class="inputBox">
-          <input type="text" placeholder="Username" />
+          <input
+            type="text"
+            placeholder="Username"
+            id="username"
+            name="username"
+            required
+          />
         </div>
-
         <div class="inputBox">
-          <input type="text" placeholder="Email Address" />
+          <input
+            type="text"
+            placeholder="Email Address"
+            name="email"
+            required
+          />
         </div>
-
         <div class="inputBox">
-          <input type="password" placeholder="Create Password" />
+          <input
+            type="password"
+            placeholder="Create Password"
+            id="regPassword"
+            name="password"
+            required
+          />
+          <span class="password-toggle" onclick="togglePassword('regPassword')"
+            >👁️</span
+          >
         </div>
-
         <div class="inputBox">
-          <input type="password" placeholder="Confirm Password" />
+          <input
+            type="password"
+            placeholder="Confirm Password"
+            id="confirmPassword"
+            name="confirmPassword"
+            required
+          />
+          <span
+            class="password-toggle"
+            onclick="togglePassword('confirmPassword')"
+            >👁️</span
+          >
         </div>
-
         <div class="inputBox">
           <input type="submit" value="Register Account" />
         </div>
@@ -63,18 +106,170 @@
         </div>
       </form>
     </div>
-    <script>
-      let signup = document.querySelector("#signup");
-      let signin = document.querySelector("#signin");
-      let body = document.querySelector("body");
-      signup.onclick = function () {
-        body.classList.add("signup");
-      };
 
-      signin.onclick = function () {
-        body.classList.remove("signup");
-      };
-      
+    <!--------------------------------------------------------- Saved Profiles ---------------------------------------------------->
+    <div class="profile-dropdown" id="profileDropdown">
+      <ul id="profile-list">
+        <li class="profile1">
+          <div class="flex-box">
+            <span class="profile-name">Himeko Inaba</span>
+            <img src="" alt="Profile 1" class="profile-image" />
+          </div>
+        </li>
+        <li class="profile2">
+          <div class="flex-box">
+            <span class="profile-name">Houatoru Oreki</span>
+            <img src="" alt="Profile 2" class="profile-image" />
+          </div>
+        </li>
+        <li class="profile3">
+          <div class="flex-box">
+            <span class="profile-name">Utahime Iori</span>
+            <img src="" alt="Profile 3" class="profile-image" />
+          </div>
+        </li>
+      </ul>
+    </div>
+
+    <!--------------------------------------------------------- JavaScript Functions ---------------------------------------------------->
+    <script>
+      // --------------------------------------------- Navigate options ---------------------------------------------------------------------
+      document.addEventListener("DOMContentLoaded", function () {
+        let changeprofileLink = document.querySelector("#changeprofile");
+        let profileDropdown = document.querySelector(".profile-dropdown");
+        let profileList = document.querySelector("#profile-list");
+
+        if (changeprofileLink) {
+          changeprofileLink.onclick = function () {
+            profileDropdown.classList.toggle("active");
+          };
+        }
+
+        profileList.addEventListener("click", function (event) {
+          if (event.target.tagName === "LI") {
+            const clickedProfile = event.target;
+
+            document.querySelectorAll("#profile-list li").forEach((profile) => {
+              profile.classList.remove("active");
+            });
+
+            clickedProfile.classList.add("active");
+            profileDropdown.classList.remove("active");
+            performLogin(clickedProfile);
+          }
+        });
+
+        function performLogin(clickedProfile) {
+          const users = {
+            "Profile 1": { username: "user1", password: "pass1" },
+            "Profile 2": { username: "user2", password: "pass2" },
+            "Profile 3": { username: "user3", password: "pass3" },
+          };
+
+          const profileName =
+            clickedProfile.querySelector(".profile-name").textContent;
+
+          const { username, password } = users[profileName];
+
+          console.log("Simulating login for user:", username);
+        }
+
+        let gobackLink = document.querySelector("#goback");
+        if (gobackLink) {
+          gobackLink.onclick = function (event) {
+            event.preventDefault();
+            window.location.href = "index.html";
+          };
+        }
+
+        let signup = document.querySelector("#signup");
+        let signin = document.querySelector("#signin");
+        let body = document.querySelector("body");
+        signup.onclick = function () {
+          body.classList.add("signup");
+        };
+
+        signin.onclick = function () {
+          body.classList.remove("signup");
+        };
+      });
     </script>
+
+    <!---------------------------------------------- Toggle Password  ------------------------------------------------------------------->
+    <script>
+      function togglePassword(inputId) {
+        const passwordInput = document.getElementById(inputId);
+        const type =
+          passwordInput.getAttribute("type") === "password"
+            ? "text"
+            : "password";
+        passwordInput.setAttribute("type", type);
+      }
+    </script>
+
+    <script>
+      // --------------------------------------------- JavaScript validation ---------------------------------------------------------------------
+      document.addEventListener("DOMContentLoaded", function () {
+        let signinForm = document.querySelector("#signinForm"); // login
+        let signupForm = document.querySelector("#singupForm"); // registration
+
+        // --------------------------------------------- Login ---------------------------------------------------------------------
+        // only if information is correct , it redirects to index.html
+        if (signinForm) {
+          signinForm.onsubmit = function (event) {
+            event.preventDefault();
+
+            const usernameInput = document.querySelector(
+              'input[name="username"]'
+            );
+            const passwordInput = document.querySelector(
+              'input[name="password"]'
+            );
+
+            const isValid = validateLogin(
+              usernameInput.value,
+              passwordInput.value
+            );
+
+            if (isValid) {
+              window.location.href = "index.html";
+            } else {
+              alert("Username or Password is incorrect!");
+            }
+          };
+        }
+
+        // --------------------------------------------- Registration  ---------------------------------------------------------------------
+        if (signupForm) {
+          signupForm.onsubmit = function (event) {
+            event.preventDefault();
+
+            // Replace this with your actual login logic
+            const usernameInput = document.querySelector(
+              'input[name="username"]'
+            );
+            const emailInput = document.querySelector('input[name="email"]');
+            const passwordInput = document.querySelector(
+              'input[name="password"]'
+            );
+
+            const usersData = validateRegistration(
+              usernameInput.value,
+              passwordInput.value,
+              emailInput.value,
+              confirmPassword.value
+            );
+
+            if (usersData) {
+              window.location.href = "#signupForm";
+            } else {
+              alert("Error");
+            }
+          };
+        }
+      });
+    </script>
+
+    <script src="script.js"></script>
   </body>
 </html>

@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+  <link rel="stylesheet" href="styleofadmin.css">
+
+</head>
+  <body>
+
+    <nav class="navbar">
+        <a href="index3.php">Logout</a>
+    </nav>
+    
+    <div><?php
+
+    $query = "SELECT * FROM contact_submissions ORDER BY submission_date DESC";
+    $result = mysqli_query($conn, $query);
+    
+    if ($result) { 
+        echo "<section class = "users-info" id="users-info">
+        echo "<h1 class ="contact-form>
+        ">Contact Form Submissions</h1>";
+        while ($row = mysqli_fetch_assoc($result)) {
+            echo "<p class="Name"><strong>Name:</strong> {$row['name']}</p>";
+            echo "<p class="Email"><strong>Email:</strong> {$row['email']}</p>";
+            echo "<p class="Message"><strong>Message:</strong> {$row['message']}</p>";
+            echo "<p class="Data"><strong>Submission Date:</strong> {$row['submission_date']}</p>";
+            echo "<hr>";
+        </section>
+        }
+    } else {
+        echo "Error: " . mysqli_error($conn);
+    };
+    
+    
+    
+    ?></div>
+
+<section class="products-info" id="products-info">
+    <h1 class="welcome-heading">Welcome Administrator!</h1>
+    
+    <form action="admin.php" method="post" enctype="multipart/form-data">
+    <label for="productName">Product Name:</label>
+    <input type="text" name="productName" required>
+    <br>
+    
+    <label for="productPrice">Product Price:</label>
+    <input type="number" step="0.01" name="productPrice" required>
+    <br>
+    
+    <label for="productImage">Product Image:</label>
+    <input type="file" name="productImage" accept="image/*" required>
+    <br>
+
+    <form action="admin.php" method="post" enctype="multipart/form-data">
+        <label for="menuItemName">Menu Item Name:</label>
+        <input type="text" name="menuItemName" required>
+        <br>
+
+        <label for="menuItemPrice">Menu Item Price:</label>
+        <input type="number" step="0.01" name="menuItemPrice" required>
+        <br>
+
+        <label for="menuItemImage">Menu Item Image:</label>
+        <input type="file" name="menuItemImage" accept="image/*" required>
+        <br>
+
+        <input type="submit" class="AddMenuItem" value="Add Menu Item">
+    
+    <input type="submit" class="addProduct" value="Add Product">
+</form>
+
+     <!-- About Us Content Form -->
+    <form action="admin.php" method="post" enctype="multipart/form-data">
+        <label for="aboutUsHeading">About Us Heading:</label>
+        <input type="text" name="aboutUsHeading" required>
+        <br>
+    
+        <label for="aboutUsContent">About Us Content:</label>
+        <textarea name="aboutUsContent" maxlength="350" rows="4" cols="10" style="width: 460px; height:50px; font-size:20px; resize: none;" required> </textarea> <!-- 200 characters -->
+        <br>
+    
+        <label for="aboutUsImage">About Us Image:</label>
+        <input type="file" name="aboutUsImage" accept="image/*" required>
+        
+        <br>
+    
+        <input type="submit" class="addAboutUsButton" value="Add About Us Content">
+        <label>Select Admin:</label>
+        <ul class="list-admin"> 
+            <li onclick="toggleAdminStatus('isAdminYes')">
+                <input type="checkbox" name="isAdmin" id="isAdminYes" value="yes">
+                <label for="isAdminYes">Abedin</label>
+            </li>
+            <li onclick="toggleAdminStatus('isAdminNo')">
+                <input type="checkbox" name="isAdmin" id="isAdminNo" value="no">
+                <label for="isAdminNo">Uron</label>
+            </li>
+        </ul>
+
+        <p id="activeAdmin">No admin is currently active. -> </p>
+
+<!----------------------------------------------------- ACTIVE ADMIN ------------------------------------------------------------------->
+        <script>
+           function toggleAdminStatus(checkboxId){
+             var checkbox  = document.getELementById(checkboxId);
+             var adminName = checkbox.nextElementSibling.innerHTML;
+             var activeAdminText = document.getElementyById('activeAdmin');
+
+             checkbox.checked = !checkbox.checked;
+             
+             if(checkbox.checked){
+               activeAdminText.textContent = adminName + "is now active.";
+               alert(adminName + " admin active ");
+             } else {
+               activeAdminText.textContent = "No admin is currently active.";
+               alert(adminName + "no admin active");
+             }
+           }
+        </script>
+
+<!----------------------------------------------------- ACTIVITY LOG ------------------------------------------------------------------->
+
+    <section class="data-analysis" id="data-analysis">
+        <h2 class="data-display">Data Analysis</h2>
+        <input type="data-label" name="data-label">
+        <h2 class="admin-activity-log">Admin Activity Log</h2>
+        <input type="admin-activity" name="admin-activity">
+    </section>
+
+        <script>
+
+            const contactFormSubmissions = [
+                { submission_date: new Date('2024-01-01T09:30:00')},
+                { submission_date: new Date('2024-01-02T12:45:00')},
+            ];
+
+            function countSubmissionPerDay(){
+              const submissionPerDay = {};
+
+              contactFormSubmissions.forEach(submission => {
+                const date = submission.submission_date.toDateString();
+                submissionPerDate[date]  (submissionPerDay[date] || 0) + 1;
+              })
+
+              return submissionPerDay;
+          };
+
+/*------------------------------------------------- DISPLAY DATA -------------------------------------------------------------------- */
+            function displaySumbissionCount(){
+               const submissionPerDay = countSubmissionPerDay();             
+               const dataAnalysisSection = document.getElementyById('data-analysis');
+
+               for(const date in submissionPerDay){
+                   const count = submissionPerDay[date];
+                   const listItem = document.createElement('li');
+                   listItem.textContent = '${date} : ${count} sumbissions';
+                   dataAnalysisSection.appendChild(listItem);
+                }
+            };
+
+            window.onload = displaySumbissionCount;
+        </script>
+
+        <br>     
+    </form>
+</section>
+
+</div>
+
+    <p>This is your dashboard. Add your content and features here.</p>
+
+
+    <?php
+    // Fetch admin users from the database
+    $query = "SELECT * FROM users WHERE role = 'admin'";
+    $result = mysqli_query($conn, $query);
+
+    if ($result && mysqli_num_rows($result) > 0) {
+        while ($admin = mysqli_fetch_assoc($result)) {
+            echo '<input type="radio" name="added_by" value="' . $admin['username'] . '" required> ' . $admin['username'];
+        }
+    }
+    ?>
+         <br>
+     </form>
+  </body>
+</html>
